@@ -1,1 +1,43 @@
-venv
+venv/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pyw
+*.pyz
+*.pywz
+*.pyzw
+*.pyz
+.DS_Store
+
+# Data
+data/processed/
+
+# Models
+models/*/model.pt
+models/*/*.pth
+
+# Logs
+logs/*/*.log
+
+# Outputs
+outputs/
+outputs/**
+# Keep evaluation artifacts (small files)
+!outputs/experiments/*/eval/
+!outputs/experiments/*/eval/*.png
+!outputs/experiments/*/eval/*.jpg
+!outputs/experiments/*/eval/*.html
+!outputs/experiments/*/eval/*.md
+!outputs/experiments/*/eval/*.json
+
+
+# Keep structure but not content
+!logs/.gitkeep
+!outputs/.gitkeep
+!outputs/experiments/.gitkeep
+!outputs/submissions/.gitkeep
+!models/.gitkeep
+!data/.gitkeep
