@@ -1,8 +1,13 @@
 torch>=2.0.0
 numpy>=1.24.0
 pandas>=2.0.0
+polars>=0.19.0
 scikit-learn>=1.3.0
 matplotlib>=3.7.0
 tqdm>=4.65.0
 jupyter>=1.0.0
 ipykernel>=6.0.0
+
+# Note: kaggle-evaluation is provided by Kaggle's environment
+# Only installable on Kaggle platform, not available on PyPI
+# The package is automatically available when running on Kaggle
