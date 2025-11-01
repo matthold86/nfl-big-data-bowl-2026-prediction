@@ -23,7 +23,9 @@ def get_next_version(model_id, models_dir='models'):
     Returns:
         version: Next available version string (e.g., 'nn_baseline.0')
     """
-    models_path = Path(models_dir)
+    current_file = Path(__file__).resolve()
+    project_root = current_file.parent.parent  # Go up from pipeline/ to project root
+    models_path = project_root / models_dir  # Absolute path
     models_path.mkdir(exist_ok=True)
     
     # Find existing versions for this model_id
@@ -65,7 +67,9 @@ def save_model_ensemble(models_x, models_y, scalers, config, metadata, model_id,
         version_path: Path to the saved model directory
     """
     version = get_next_version(model_id)
-    version_path = Path('models') / version
+    current_file = Path(__file__).resolve()
+    project_root = current_file.parent.parent
+    version_path = project_root / 'models' / version  # Absolute path
     version_path.mkdir(exist_ok=True, parents=True)
     
     # Determine which folds to save

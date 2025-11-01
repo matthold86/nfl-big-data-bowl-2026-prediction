@@ -19,15 +19,19 @@ class Config:
     
     # Environment-aware data directory
     def __init__(self):
+        # Find project root (where setup.py or .git exists)
+        current_file = Path(__file__).resolve()
+        project_root = current_file.parent.parent  # Go up from pipeline/ to project root
+        
         if os.getenv('KAGGLE_KERNEL_RUN_TYPE'):
             # Running on Kaggle
             self.DATA_DIR = Path("/kaggle/input/nfl-big-data-bowl-2026-prediction/")
         else:
-            # Running locally
-            self.DATA_DIR = Path("./data/raw/train_data")
+            # Running locally - use absolute path from project root
+            self.DATA_DIR = project_root / "data/raw/train_data"
             
-        self.OUTPUT_DIR = Path("./outputs")
-        self.OUTPUT_DIR.mkdir(exist_ok=True)
+        self.OUTPUT_DIR = project_root / "outputs"
+        self.OUTPUT_DIR.mkdir(exist_ok=True, parents=True)
         
         # Training hyperparameters
         self.SEED = 42

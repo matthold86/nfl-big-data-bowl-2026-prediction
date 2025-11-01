@@ -1,0 +1,15 @@
+{
+  "SEED": 42,
+  "N_FOLDS": 5,
+  "BATCH_SIZE": 256,
+  "EPOCHS": 200,
+  "PATIENCE": 30,
+  "LEARNING_RATE": 0.001,
+  "WINDOW_SIZE": 10,
+  "HIDDEN_DIM": 128,
+  "MAX_FUTURE_HORIZON": 94,
+  "FIELD_X_MIN": 0.0,
+  "FIELD_X_MAX": 120.0,
+  "FIELD_Y_MIN": 0.0,
+  "FIELD_Y_MAX": 53.3
+}
